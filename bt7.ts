@@ -1,5 +1,5 @@
 console.log('BT7: Tim gia tri lon nhat')
-var maxmimum = (a: number, b: number, c: number, d: number) => {
+var maxMim = (a: number, b: number, c: number, d: number) => {
     let max: number = a;
     if (max < b) {
         max = b
@@ -12,4 +12,4 @@ var maxmimum = (a: number, b: number, c: number, d: number) => {
     }
     console.log(`Gia tri max la ${max}`)
 }
-maxmimum(2,5,8,3)
+maxMim(2,5,8,3)

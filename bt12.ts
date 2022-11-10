@@ -1,5 +1,5 @@
 console.log('UCLN')
-var UCLN = (a: number, b: number) => {
+var uocChung = (a: number, b: number) => {
     if (a == 0 || b == 0) {
         return a+b
     }
@@ -12,4 +12,4 @@ var UCLN = (a: number, b: number) => {
     }
     return a
 }
-console.log('UCLN la: ',UCLN(6,24))
+console.log('UCLN la: ',uocChung(6,24))

@@ -1,5 +1,5 @@
 console.log('BT8: Nhap N xuat Ten TA')
-var english = (n: number) => {
+var engLish = (n: number) => {
     switch(n) {
         case 1:
             console.log('One');
@@ -33,4 +33,4 @@ var english = (n: number) => {
             break;    
     }
 }
-english(7)
+engLish(7)

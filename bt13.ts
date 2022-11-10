@@ -1,5 +1,5 @@
 console.log('BCNN')
-var BCNN = (x1: number, x2: number) => {
+var boiChung = (x1: number, x2: number) => {
     let stem: number 
     if(x1 > x2){
         stem = x1
@@ -12,4 +12,4 @@ var BCNN = (x1: number, x2: number) => {
         }
     }
 }
-console.log('BCNN = ',BCNN(7,6))
+console.log('BCNN = ',boiChung(7,6))
