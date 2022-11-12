@@ -13,7 +13,7 @@ var baiTap16 = () => {
         tich *= arr[i]
     }
     console.log(` Gia tri Tong ${tong} va Tich ${tich}`)
-    
+
     for (let i = 0 ; i <= j; i++){
         for ( let h = i + 1; h <= j; h++ ){
             if( arr[i] < arr[h]) {
@@ -25,4 +25,4 @@ var baiTap16 = () => {
         console.log('sx mang',arr[i])
     }
 }
-baiTap17()
+baiTap16()
