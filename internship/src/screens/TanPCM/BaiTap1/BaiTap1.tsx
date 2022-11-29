@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet,Image,Text, SafeAreaView, View} from 'react-native'
+import {StyleSheet,Image,Text, SafeAreaView} from 'react-native'
 import { avatars } from '../url';
 
 const BaiTap1 = () => {
@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
         width: 110,
       },
       text: {
-        backgroundColor: 'blue',
+        backgroundColor: "blue",
         fontSize: 20,
-        textAlign: 'center',
+        textAlign: "center",
         width: 110,
         height:30
       },
