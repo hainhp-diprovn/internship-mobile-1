@@ -1,29 +1,31 @@
 import React from 'react';
-import {StyleSheet,TouchableOpacity,Image,Text} from 'react-native'
+import {StyleSheet,Image,Text, SafeAreaView, View} from 'react-native'
+import { avatars } from '../url';
 
-const BaiTap1 = (props) => {
+const BaiTap1 = () => {
     return (
-            <TouchableOpacity style={styles.listItem}
-                onPress={() => alert(props.name)}>
-            <Image source={props.image} style={styles.image} />
-            <Text style={styles.text}>{props.title}</Text>
-          </TouchableOpacity>
+          <SafeAreaView style={styles.container}>
+              <Image source={avatars} style={styles.image} />
+              <Text style={styles.text}>Name</Text>
+          </SafeAreaView>
     )
 }
 export default BaiTap1
 
 const styles = StyleSheet.create({
-    listItem: {
-        padding: 10,
+    container: {
+        flex:1,
+        margin: 20,
       },
       image: {
         height: 150,
-        width: 100,
+        width: 110,
       },
       text: {
         backgroundColor: 'blue',
         fontSize: 20,
         textAlign: 'center',
-        width: 100,
+        width: 110,
+        height:30
       },
 })
