@@ -8,11 +8,15 @@ import {
     TouchableOpacity,
     Keyboard
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo'
 
 const BT3 = () => {
+
     const [username, setUsername] = useState("")
     const [pass, setPass] = useState("")
     const [notify, setNotify] = useState("")
+    const [securePass, setSecurePass] = useState(false)
+
     const handleLogin = () => {
         if (pass == "" || username == "") {
             setNotify("Không được để trống Username hoặc Pass")
@@ -20,10 +24,11 @@ const BT3 = () => {
             ((pass != "Admin123") || (username != "Admin")) ? setNotify("Nhập sai username và password") : setNotify("")
         }
     }
+
     const passRef = useRef<any>();
+
     return (
         <TouchableWithoutFeedback onPress={() => {
-            // console.log('hi')
             Keyboard.dismiss()
         }}
             accessible={false}>
@@ -41,29 +46,42 @@ const BT3 = () => {
                     }}
                     blurOnSubmit={false}
                 />
-                <TextInput
-                    style={styles.txtInput}
-                    ref={passRef}
-                    placeholder="Pass"
-                    value={pass}
-                    onChangeText={(text) => {
-                        setPass(text)
-                    }}
-                    onSubmitEditing={handleLogin}
-                />
-                <Text style={styles.txtAlert}>
-                    {
-                        notify
-                    }
-                </Text>
+                <View style={styles.containerPassword}>
+                    <TextInput
+                        style={[styles.txtInput, { marginBottom: 0 }]}
+                        ref={passRef}
+                        placeholder="Pass"
+                        value={pass}
+                        secureTextEntry={securePass}
+                        onChangeText={(text) => {
+                            setPass(text)
+                        }}
+                        onSubmitEditing={handleLogin}
+                    />
+                    <TouchableOpacity
+                        style={{
+                            position: "absolute",
+                            top: 20,
+                            right: 48
+                        }}
+                        onPress={() => {
+                            setSecurePass(!securePass)
+                        }}>
+                        <Icon
+                            name={securePass ? "eye-with-line" : "eye"}
+                            size={28}
+                            color={"#9CA1A3"} />
+                    </TouchableOpacity>
+                </View>
+                <Text style={styles.txtAlert}>{notify}</Text>
                 <View style={styles.containerBTN}>
                     <TouchableOpacity
                         style={styles.BTN}
                         onPress={handleLogin}
                     >
-                        <Text style={styles.txtBTN}>{'Login'}</Text>
+                        <Text style={styles.txtBTN}>Login</Text>
                     </TouchableOpacity>
-                    <View style={{ flex: 1 }} />
+                    <View style={styles.viewEmpty} />
                     <TouchableOpacity
                         style={styles.BTN}
                         onPress={() => {
@@ -71,7 +89,7 @@ const BT3 = () => {
                             setUsername("")
                         }}
                     >
-                        <Text style={styles.txtBTN}>{'Clear'}</Text>
+                        <Text style={styles.txtBTN}>Clear</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -117,5 +135,14 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         fontSize: 16,
         color: 'red'
+    },
+    viewEmpty: {
+        flex: 1
+    },
+    containerPassword: {
+        width: '100%',
+        height: 70,
+        justifyContent: "center",
+        alignItems: "center"
     }
 });
