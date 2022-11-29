@@ -2,77 +2,106 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  TextInput,
-  Text,
   Image,
-  TouchableOpacity,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  FlatList,
+  TouchableOpacity
 } from 'react-native';
+import BaiTap1 from '../BaiTap1/BaiTap1';
+import {avatars, img2, img3} from '../url';
 
-const BaiTap2 = () => {
+const  BaiTap2 = () => {
+  const data = [
+    {
+      title: 'Number 1',
+      name: 'Devin',
+      image: avatars,
+    },
+    {
+      title: 'Number 2',
+      name: 'Dan',
+      image: img2,
+    },
+    {
+      title: 'Number 3',
+      name: 'Dominic',
+      image: img3,
+    },
+    {
+      title: 'Number 4',
+      name: 'Jackson',
+      image: avatars,
+    },
+    {
+      title: 'Number 5',
+      name: 'James',
+      image: img3,
+    },
+    {
+      title: 'Number 6',
+      name: 'Joel',
+      image: img2,
+    },
+    {
+      title: 'Number 7',
+      name: 'John',
+      image: avatars,
+    },
+    {
+      title: 'Number 8',
+      name: 'Jillian',
+      image: img2,
+    },
+    {
+      title: 'Number 9',
+      name: 'Jimmy',
+      image: img3,
+    },
+    {
+      title: 'Number 10',
+      name: 'Julie',
+      image: avatars,
+    },
+  ];
+
   return (
-    <View style={styles.container}>
-      <View style={styles.inputView}>
-        <TextInput
-          placeholderTextColor={'#696969'}
-          placeholder="Enter Your Email"
-          style={styles.input}
-        />
-        <TextInput
-          placeholderTextColor={'#696969'}
-          placeholder="Confrom Password"
-          style={styles.input}
-        />
-      </View>
-      <View style={styles.loginButton}>
-        <TouchableOpacity >
-            <Text style={styles.textLogin} >Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Text style={styles.textLogin}>Clear</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={data}
+        renderItem={({item}) => (
+          <TouchableOpacity style={styles.listItem}
+                onPress={() => alert(item.name)}>
+            <Image source={item.image} style={styles.image} />
+            <Text style={styles.text}>{item.title}</Text>
+          </TouchableOpacity>
+        )}
+        numColumns={3}
+      />
+    </SafeAreaView>
   );
 };
 
-export default BaiTap2
+export default BaiTap2;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EEEEEE',
-    position: 'relative',
-    paddingTop:30
-  },
-  inputView: {
-    paddingTop: 10,
+    backgroundColor: '#f0f8ff',
     alignItems: 'center',
-    margin: 25,
-    marginBottom: 15,
   },
-  input: {
-    marginVertical: 10,
-    padding: 15,
-    paddingLeft: 32,
-    backgroundColor: 'white',
-    borderRadius: 100,
-    width: '100%',
-    fontWeight: '600',
+  listItem: {
+    padding: 10,
   },
-  loginButton: {
-    justifyContent: "space-around",
-    flexDirection:"row",
-    paddingVertical: 20,
-    paddingHorizontal: 30,
-    margin: 25,
-    borderRadius: 15,
+  image: {
+    height: 150,
+    width: 100,
   },
-  textLogin: {
+  text: {
+    backgroundColor: "blue",
+    textAlign: "center",
     fontSize: 20,
-    fontWeight: '800',
-    color: 'black',
-    backgroundColor: "gray",
-    padding:20,
+    width: 100,
   },
-
 });
