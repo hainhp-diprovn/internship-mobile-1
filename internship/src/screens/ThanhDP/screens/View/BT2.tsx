@@ -6,7 +6,10 @@ import {
 
 } from 'react-native';
 import User from './BT1'
-const BT1 = () => {
+
+
+const BT2 = () => {
+
     const User_Info = [
         {
             id: 1,
@@ -67,7 +70,9 @@ const BT1 = () => {
     )
 }
 
-export default BT1
+
+export default BT2
+
 
 const styles = StyleSheet.create({
     container: {
