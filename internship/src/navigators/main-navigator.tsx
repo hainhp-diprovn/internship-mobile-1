@@ -6,8 +6,9 @@ import HomeScreen from "../screens/Home/HomeScreen"
 import { navigationRef } from "./root-navigator"
 import ProfileScreen from "../screens/Profile/ProfileScreen"
 import BaiTap1PCMT from "../screens/TanPCM/BaiTap1/BaiTap1"
-import BaiTap2PCMT from "../screens/TanPCM/BaiTap2/BaiTap2"
-
+// import BaiTap2PCMT from "../screens/TanPCM/BaiTap2/BaiTap2"
+// import BaiTap3PCMT from "../screens/TanPCM/BaiTap3/BaiTap3"
+// import BaiTap4PCMT from "../screens/TanPCM/BaiTap4/BaiTap4"
 
 const Stack = createNativeStackNavigator()
 
@@ -17,11 +18,11 @@ const MainStack = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={screenName.home}
+      initialRouteName={screenName.phuchiminhtan}
     >
       <Stack.Screen name={screenName.home} component={HomeScreen} />
       <Stack.Screen name={screenName.profile} component={ProfileScreen} />
-      <Stack.Screen name={screenName.phuchiminhtan} component={BaiTap2PCMT} />
+      <Stack.Screen name={screenName.phuchiminhtan} component={BaiTap1PCMT} />
     </Stack.Navigator>
   )
 }
