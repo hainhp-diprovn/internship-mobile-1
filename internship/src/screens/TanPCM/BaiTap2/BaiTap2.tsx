@@ -67,7 +67,6 @@ const BaiTap2 = () => {
   ];
 
   const renderItems = (item) => {
-    console.log(item?.item?.name);
     return (
       <TouchableOpacity style={styles.listItem}
         onPress={() => alert(item?.item.name)}>
