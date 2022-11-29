@@ -1,4 +1,5 @@
 export enum screenName {
     home = "Home",
-    profile = "Profile"
+    profile = "Profile",
+    ThanhDP = "ThanhDP"
 }
