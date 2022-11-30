@@ -70,9 +70,7 @@ const BT2 = () => {
     )
 }
 
-
 export default BT2
-
 
 const styles = StyleSheet.create({
     container: {
