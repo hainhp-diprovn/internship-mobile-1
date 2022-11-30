@@ -1,82 +1,60 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     View,
     StyleSheet,
     Text,
     Animated,
     Image,
-    Button
 } from 'react-native';
 import { TapGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
-
-
 const BT7 = () => {
     const doubleTapRef = useRef(null);
-    const [showNotify, setShowNotify] = useState(false)
     const [numberOfTap, setNumberOfTap] = useState(0)
-    const animatedValue = useRef(new Animated.Value(10))
+    const fadeAnim = useRef(new Animated.Value(0)).current;
 
-    useEffect(() => {
-        moveView()
-        setTimeout(() => {
-            setShowNotify(false)
-            animatedValue.current = new Animated.Value(10)
-        }, 5000);
-        console.log(animatedValue.current)
-    }, [showNotify])
+    const fadeIn = () => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 3000,
+            useNativeDriver: true
+        }).start(() => {
+            setTimeout(() => {
+                fadeOut()
+            }, 5000);
+        });
+    };
+    const fadeOut = () => {
+        Animated.timing(fadeAnim, {
+            toValue: 0,
+            duration: 2000,
+            useNativeDriver: true
+        }).start();
+    };
 
-    const moveView = () => {
-        Animated.timing(
-            animatedValue.current,
-            {
-                toValue: 300,
-                duration: 5000,
-                useNativeDriver: false,
-            }
-        ).start()
-    }
     return (
 
         <View style={styles.container}>
-            {
-                showNotify &&
-
-                <Animated.View style={{
-                    height: 80,
-                    width: 100,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: 30,
-                    backgroundColor: "lightblue",
-                    position: "absolute",
-                    top: 100,
-                    left: animatedValue.current
-                }}>
-                    <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-                        {
-                            numberOfTap == 1 ? "Tôi là giày" : (numberOfTap == 2 ? "Giày là tôi" : "")
-                        }
-                    </Text>
-                </Animated.View>
-
-
-            }
-            <GestureHandlerRootView style={{ height: 300, width: '100%' }}>
+            <Animated.View style={[styles.viewAnimated, { opacity: fadeAnim }]}>
+                <Text style={styles.txt}>
+                    {numberOfTap == 1 ? "Tôi là giày" : (numberOfTap == 2 ? "Giày là tôi" : "")}
+                </Text>
+            </Animated.View>
+            <GestureHandlerRootView style={styles.gestureView}>
                 <TapGestureHandler
                     numberOfTaps={1}
                     waitFor={doubleTapRef}
                     onActivated={() => {
+                        fadeIn()
                         setNumberOfTap(1)
-                        setShowNotify(true)
                     }}>
                     <TapGestureHandler
                         ref={doubleTapRef}
                         numberOfTaps={2}
                         onActivated={() => {
+                            fadeIn()
                             setNumberOfTap(2)
-                            setShowNotify(true)
                         }}>
                         <Image
                             style={styles.img}
@@ -88,20 +66,11 @@ const BT7 = () => {
                     </TapGestureHandler>
                 </TapGestureHandler>
             </GestureHandlerRootView>
-
-            <Button
-                title="Click"
-                onPress={() => {
-                    setShowNotify(true)
-                    moveView()
-                }}
-            />
         </View>
-
     );
-
 }
 export default BT7
+
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
@@ -117,5 +86,24 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
     },
+    viewAnimated: {
+        height: 80,
+        width: 100,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 30,
+        backgroundColor: "lightblue",
+        position: "absolute",
+        top: 100,
+        left: 10,
+    },
+    txt: {
+        fontWeight: "bold",
+        fontSize: 16
+    },
+    gestureView: {
+        height: 300,
+        width: '100%',
+    }
 
 });
