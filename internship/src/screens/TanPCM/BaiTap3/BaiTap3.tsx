@@ -10,27 +10,30 @@ import {
 } from 'react-native';
 
 const BaiTap3 = () => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [notification, setNotification] = useState("")
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [notification, setNotification] = useState<string>("");
   const handleLogin = () => {
-    if (username == "" || password == "") {
+
+    if (username === "" || password === "") {
       setNotification("Please enter your username and password")
-    } else if (username != "Admin" || password != "Admin123") {
+    } else if (username !== "Admin" || password !== "Admin123") {
       setNotification("Wrong username and password")
     } else {
-      setUsername("")
-      setPassword("")
-      setNotification("")
-      alert("Login success")
+      setUsername("");
+      setPassword("");
+      setNotification("");
+      alert("Login success");
     }
   }
   const reset = () => {
-    setUsername("")
-    setPassword("")
-    setNotification("")
+    setUsername("");
+    setPassword("");
+    setNotification("");
   }
   const passwordRef = useRef<TextInput>(null);
+  const usernameRef = useRef<TextInput>(null);
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
@@ -43,7 +46,7 @@ const BaiTap3 = () => {
             onChangeText={setUsername}
             returnKeyType="next"
             onSubmitEditing={() => {
-              (passwordRef.current && passwordRef.current.focus())
+              username != "" ? passwordRef.current && passwordRef.current.focus() : usernameRef.current && usernameRef.current.focus()
             }}
             blurOnSubmit={false}
           />
@@ -56,7 +59,10 @@ const BaiTap3 = () => {
             onChangeText={setPassword}
             ref={passwordRef}
             returnKeyType="done"
-            onSubmitEditing={handleLogin}
+            onSubmitEditing={() => {
+              !!password ? handleLogin() : passwordRef.current && passwordRef.current.focus() ;
+            }}
+            blurOnSubmit={!!password ? true : false}
           />
         </View>
         <View>
@@ -66,7 +72,7 @@ const BaiTap3 = () => {
           <TouchableOpacity style={styles.buttonView}>
             <Text
               style={styles.textLogin}
-              onPress={handleLogin}
+              onPress={() => handleLogin()}
             >Login</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.buttonView}>
@@ -87,7 +93,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#EEEEEE",
-    position: "relative",
     paddingTop: 30
   },
   textNotifi: {
@@ -119,7 +124,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     borderRadius: 15,
-
   },
   textLogin: {
     fontSize: 18,
