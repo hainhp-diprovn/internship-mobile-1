@@ -59,11 +59,7 @@ const BT3 = () => {
                         onSubmitEditing={handleLogin}
                     />
                     <TouchableOpacity
-                        style={{
-                            position: "absolute",
-                            top: 20,
-                            right: 48
-                        }}
+                        style={styles.btnSecurePass}
                         onPress={() => {
                             setSecurePass(!securePass)
                         }}>
@@ -144,5 +140,10 @@ const styles = StyleSheet.create({
         height: 70,
         justifyContent: "center",
         alignItems: "center"
-    }
+    },
+    btnSecurePass: {
+        position: "absolute",
+        top: 20,
+        right: 48
+    },
 });
