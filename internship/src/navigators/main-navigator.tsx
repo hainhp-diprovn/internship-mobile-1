@@ -12,10 +12,11 @@ import BaiTap3PCMT from "../screens/TanPCM/BaiTap3/BaiTap3"
 // import BaiTap4PCMT from "../screens/TanPCM/BaiTap4/BaiTap4"
 import BT1DPT from "../screens/ThanhDP/screens/View/BT1"
 import BT2DPT from "../screens/ThanhDP/screens/View/BT2"
-// import BT3DPT from "../screens/ThanhDP/screens/View/BT3"
+import BT3DPT from "../screens/ThanhDP/screens/View/BT3"
 // import BT4DPT from "../screens/ThanhDP/screens/View/BT4"
 import BT5DPT from "../screens/ThanhDP/screens/View/BT5"
 import BT7DPT from "../screens/ThanhDP/screens/View/BT7"
+
 
 const Stack = createNativeStackNavigator()
 
