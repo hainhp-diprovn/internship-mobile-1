@@ -6,11 +6,15 @@ const BaiTap4 = () => {
   const [redColor, setRedColor] = useState<number>(0);
   const [greenColor, setGreenColor] = useState<number>(0);
   const [blueColor, setBlueColor] = useState<number>(0);
-
+    
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.textIndex}>Color ( R: {redColor}, G: {greenColor}, B: {blueColor} )</Text>
-      <View style={[styles.boxColor, { backgroundColor: `rgb(${redColor},${greenColor},${blueColor})` }]} />
+      <Text style={styles.textIndex}>
+        Color ( R: {redColor}, G: {greenColor}, B: {blueColor} )
+      </Text>
+      <View style={[styles.boxColor,
+      { backgroundColor: `rgb(${redColor},${greenColor},${blueColor})` }]}
+      />
       <View style={styles.line}>
         <Text style={styles.nameColor}>Red</Text>
         <View>
@@ -19,7 +23,7 @@ const BaiTap4 = () => {
             <Text>255</Text>
           </View>
           <Slider
-            style={{ width: 300, height: 40 }}
+            style={styles.styleSlider}
             minimumValue={0}
             maximumValue={255}
             minimumTrackTintColor="#105ecc"
@@ -28,9 +32,8 @@ const BaiTap4 = () => {
             value={redColor}
             thumbTintColor="#00bfff"
             onValueChange={(redColor) => setRedColor(redColor)}
-          />
+            />
         </View>
-
       </View>
       <View style={styles.line}>
         <Text style={styles.nameColor}>Green</Text>
@@ -40,7 +43,7 @@ const BaiTap4 = () => {
             <Text>255</Text>
           </View>
           <Slider
-            style={{ width: 300, height: 40 }}
+            style={styles.styleSlider}
             minimumValue={0}
             maximumValue={255}
             minimumTrackTintColor="#105ecc"
@@ -60,7 +63,7 @@ const BaiTap4 = () => {
             <Text>255</Text>
           </View>
           <Slider
-            style={{ width: 300, height: 40 }}
+            style={styles.styleSlider}
             minimumValue={0}
             maximumValue={255}
             minimumTrackTintColor="#105ecc"
@@ -82,6 +85,10 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 20
   },
+  styleSlider: {
+    width: 300,
+    height: 40
+  },
   number: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -92,14 +99,14 @@ const styles = StyleSheet.create({
   },
   textIndex: {
     textAlign: "center",
+    fontWeight: "600",
     padding: 20,
     fontSize: 18,
-    fontWeight: "bold"
   },
   boxColor: {
     alignSelf: "center",
-    height: 400,
     width: "80%",
+    height: 400,
     borderRadius: 30,
     marginBottom: 30
   },
