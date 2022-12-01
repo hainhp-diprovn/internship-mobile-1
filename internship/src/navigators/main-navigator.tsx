@@ -18,6 +18,7 @@ import BT3DPT from "../screens/ThanhDP/screens/View/BT3"
 import BT4DPT from "../screens/ThanhDP/screens/View/BT4"
 import BT5DPT from "../screens/ThanhDP/screens/View/BT5"
 import BT7DPT from "../screens/ThanhDP/screens/View/BT7"
+import BT11DPT_Layout from "../screens/ThanhDP/screens/Layout/BT11"
 
 
 const Stack = createNativeStackNavigator()
@@ -30,8 +31,9 @@ const MainStack = () => {
       }}
       initialRouteName={screenName.home}
     >
-      <Stack.Screen name={screenName.home} component={HomeScreen} />
-      <Stack.Screen name={screenName.profile} component={ProfileScreen} />
+      {/* <Stack.Screen name={screenName.home} component={HomeScreen} />
+      <Stack.Screen name={screenName.profile} component={ProfileScreen} /> */}
+      <Stack.Screen name={screenName.ThanhDP} component={BT11DPT_Layout} />
     </Stack.Navigator>
   )
 }
