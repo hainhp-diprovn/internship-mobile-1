@@ -5,6 +5,7 @@ import {
     Text,
     Animated,
     Image,
+    Button,
 } from 'react-native';
 import { TapGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
 
@@ -14,15 +15,18 @@ const BT7 = () => {
     const [numberOfTap, setNumberOfTap] = useState(0)
     const fadeAnim = useRef(new Animated.Value(0)).current;
 
+    let startFadeOut = setTimeout(() => {
+        fadeOut()
+    }, 5000);
+
     const fadeIn = () => {
+        clearTimeout(startFadeOut)
         Animated.timing(fadeAnim, {
             toValue: 1,
-            duration: 3000,
+            duration: 2000,
             useNativeDriver: true
         }).start(() => {
-            setTimeout(() => {
-                fadeOut()
-            }, 5000);
+            startFadeOut
         });
     };
     const fadeOut = () => {
@@ -34,7 +38,6 @@ const BT7 = () => {
     };
 
     return (
-
         <View style={styles.container}>
             <Animated.View style={[styles.viewAnimated, { opacity: fadeAnim }]}>
                 <Text style={styles.txt}>
