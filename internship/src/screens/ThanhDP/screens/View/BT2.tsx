@@ -9,6 +9,7 @@ import User from './BT1'
 
 
 const BT2 = () => {
+
     const User_Info = [
         {
             id: 1,
