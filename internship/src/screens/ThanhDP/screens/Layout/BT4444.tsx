@@ -5,15 +5,36 @@ import {
     Text,
     Dimensions
 } from "react-native";
-import { responsive } from "../../../../ultils/reponsive"
 
 const BT4444 = () => {
 
+    const squareSize = 50
+    const [orientation, setOrientation] = useState("PORTRAIT");
+
+    useEffect(() => {
+        Dimensions.addEventListener("change", ({ window: { width, height } }) => {
+            if (width < height) {
+                setOrientation("PORTRAIT")
+            } else {
+                setOrientation("LANDSCAPE")
+            }
+        })
+    }, [orientation]);
+
+    function size(designSize: number) {
+        const DESIGN_SCREEN_WIDTH = 375
+        const DEVICE_SCREEN_WIDTH = Dimensions.get("window").width
+        const widthPercent = DEVICE_SCREEN_WIDTH / DESIGN_SCREEN_WIDTH
+        const result = designSize * widthPercent
+
+        return Number(result.toFixed(1))
+    }
+
     return (
         <View style={styles.container}>
-            <View style={styles.square} />
-            <View style={styles.square} />
-            <View style={styles.square} />
+            <View style={[styles.square, { width: size(squareSize), height: size(squareSize) }]} />
+            <View style={[styles.square, { width: size(squareSize), height: size(squareSize) }]} />
+            <View style={[styles.square, { width: size(squareSize), height: size(squareSize) }]} />
         </View>
     )
 }
@@ -29,8 +50,6 @@ const styles = StyleSheet.create({
     },
     square: {
         backgroundColor: "pink",
-        width: responsive.width(40),
-        height: responsive.width(40)
     }
 });
 
