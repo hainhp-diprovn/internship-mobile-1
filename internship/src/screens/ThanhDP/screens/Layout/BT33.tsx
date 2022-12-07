@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
     View,
     StyleSheet,
@@ -7,20 +7,6 @@ import {
 } from 'react-native';
 
 const BT33 = () => {
-
-    const [orientation, setOrientation] = useState("PORTRAIT");
-
-    useEffect(() => {
-        Dimensions.addEventListener('change', ({ window: { width, height } }) => {
-            if (width < height) {
-                setOrientation("PORTRAIT")
-            } else {
-                setOrientation("LANDSCAPE")
-            }
-        })
-    }, [orientation]);
-
-
 
     return (
         <View style={styles.container}>
