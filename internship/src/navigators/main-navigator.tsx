@@ -21,6 +21,8 @@ import BT7DPT from "../screens/ThanhDP/screens/View/BT7"
 import SliderVertical from '../screens/ThanhDP/screens/View/SliderVertical';
 import SliderHorizontal from '../screens/ThanhDP/screens/View/SliderHorizontal';
 import BT1_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT1"
+import BT333_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT333"
+
 
 
 const Stack = createNativeStackNavigator()
