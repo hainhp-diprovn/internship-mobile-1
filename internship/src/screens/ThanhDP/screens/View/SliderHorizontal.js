@@ -67,7 +67,7 @@ const Slider = () => {
                 <PanGestureHandler onGestureEvent={gestureHandler}>
                     <Animated.View style={[styles.thumb, animatedStyle]}>
                         <AnimatedTextInput
-                            style={{ fontSize: 14, color: "black", width: 40, height: 40 }}
+                            style={styles.animatedTXTInput}
                             defaultValue="0"
                             animatedProps={percent}
                             textAlign="center"
@@ -116,6 +116,12 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         alignItems: "center",
         justifyContent: "center"
+    },
+    animatedTXTInput: {
+        fontSize: 14,
+        color: "black",
+        width: 40,
+        height: 40
     }
 
 });
