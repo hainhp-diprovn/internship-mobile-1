@@ -23,6 +23,7 @@ import SliderHorizontal from '../screens/ThanhDP/screens/View/SliderHorizontal';
 import BT1_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT1"
 import BT11_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT11"
 
+
 const Stack = createNativeStackNavigator()
 
 const MainStack = () => {
@@ -35,6 +36,7 @@ const MainStack = () => {
     >
       <Stack.Screen name={screenName.home} component={HomeScreen} />
       <Stack.Screen name={screenName.profile} component={ProfileScreen} />
+
     </Stack.Navigator>
   )
 }
