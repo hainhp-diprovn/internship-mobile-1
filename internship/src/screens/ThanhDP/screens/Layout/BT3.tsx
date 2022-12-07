@@ -6,27 +6,8 @@ import {
     Dimensions
 } from "react-native";
 
+
 const BT3 = () => {
-
-    const windowWidth = Dimensions.get("window").width;
-    const windowHeight = Dimensions.get("window").height;
-    const [orientation, setOrientation] = useState("PORTRAIT");
-
-    useEffect(() => {
-        Dimensions.addEventListener("change", ({ window: { width, height } }) => {
-            if (width < height) {
-                setOrientation("PORTRAIT")
-                console.log("PORTRAIT" + ", width:" + windowWidth + ", height:" + windowHeight)
-            } else {
-                setOrientation("LANDSCAPE")
-                console.log("LANDSCAPE" + ", width:" + windowWidth + ", height:" + windowHeight)
-
-            }
-        })
-
-    }, [orientation]);
-
-
 
     return (
         <View style={styles.container}>
