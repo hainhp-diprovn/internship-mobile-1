@@ -33,9 +33,8 @@ const MainStack = () => {
       }}
       initialRouteName={screenName.home}
     >
-      {/* <Stack.Screen name={screenName.home} component={HomeScreen} />
-      <Stack.Screen name={screenName.profile} component={ProfileScreen} /> */}
-      <Stack.Screen name={screenName.ThanhDP} component={BT33_LayoutDPT} />
+      <Stack.Screen name={screenName.home} component={HomeScreen} />
+      <Stack.Screen name={screenName.profile} component={ProfileScreen} />
     </Stack.Navigator>
   )
 }
