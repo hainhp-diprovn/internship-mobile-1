@@ -22,6 +22,16 @@ import SliderVertical from '../screens/ThanhDP/screens/View/SliderVertical';
 import SliderHorizontal from '../screens/ThanhDP/screens/View/SliderHorizontal';
 import BT1_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT1"
 import BT11_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT11"
+import BT2_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT2"
+import BT3_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT3"
+import BT4_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT4"
+import BT44_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT44"
+import BT444_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT444"
+import BT4444_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT4444"
+import BT5_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT5"
+import BT6_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT6"
+
+import BT8_LayoutDPT from '../screens/ThanhDP/screens/Layout/BT8';
 
 
 const Stack = createNativeStackNavigator()
