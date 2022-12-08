@@ -23,6 +23,7 @@ import BaiTap11_Layout from "../screens/TanPCM/layout/BaiTap1'"
 import BaiTap3_Layout from "../screens/TanPCM/layout/BaiTap3"
 import BaiTap33_Layout from "../screens/TanPCM/layout/BaiTap3'"
 import BaiTap2_Layout from "../screens/TanPCM/layout/BaiTap2"
+import BaiTap4_Layout from "../screens/TanPCM/layout/BaiTap4"
 import SliderVertical from '../screens/ThanhDP/screens/View/SliderVertical';
 import SliderHorizontal from '../screens/ThanhDP/screens/View/SliderHorizontal';
 import BT1_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT1"
