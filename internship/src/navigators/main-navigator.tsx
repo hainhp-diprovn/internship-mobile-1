@@ -48,11 +48,10 @@ const MainStack = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={screenName.phuchiminhtan}
+      initialRouteName={screenName.home}
     >
       <Stack.Screen name={screenName.home} component={HomeScreen} />
       <Stack.Screen name={screenName.profile} component={ProfileScreen} />
-      <Stack.Screen name={screenName.phuchiminhtan} component={BaiTap333_Layout} />
 
     </Stack.Navigator>
   )
