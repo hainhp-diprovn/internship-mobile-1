@@ -19,7 +19,6 @@ import BT3DPT from "../screens/ThanhDP/screens/View/BT3"
 import BT5DPT from "../screens/ThanhDP/screens/View/BT5"
 import BT7DPT from "../screens/ThanhDP/screens/View/BT7"
 import BaiTap1_Layout from "../screens/TanPCM/layout/BaiTap1"
-// import BaiTap22_Layout from "../screens/TanPCM/layout/BaiTap2'"
 
 import SliderVertical from '../screens/ThanhDP/screens/View/SliderVertical';
 import SliderHorizontal from '../screens/ThanhDP/screens/View/SliderHorizontal';
