@@ -1,10 +1,34 @@
-import React from 'react';
-import { SafeAreaView, View , StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { SafeAreaView, View , StyleSheet, Dimensions} from 'react-native';
 
 const BaiTap1p = () => {
+
+    const sizeBox = 200
+
+    function designSize(size: number) {
+        const DESIGN_SCREEN_WIDTH = 375
+        const DEVICE_SCREEN_WIDTH = Dimensions.get("window").width
+        const widthPercent = DEVICE_SCREEN_WIDTH / DESIGN_SCREEN_WIDTH
+        const result = size * widthPercent
+
+        return Number(result.toFixed(1))
+    }
+
+    const [orientation, setOrientation] = useState("PORTRAIT");
+
+    useEffect(() => {
+        Dimensions.addEventListener("change", ({ window: { width, height } }) => {
+            if (width < height) {
+                setOrientation("PORTRAIT")
+            } else {
+                setOrientation("LANDSCAPE")
+            }
+        })
+    }, [orientation]);
+
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.imgView}></View>
+            <View style={[styles.imgView, {width : designSize(sizeBox)}]}></View>
         </SafeAreaView>
     )
 }
@@ -18,7 +42,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     imgView: {
-        paddingTop:"70%",
         aspectRatio:1/1,
         backgroundColor:"#6495ed"
     }
