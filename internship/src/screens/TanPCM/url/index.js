@@ -17,6 +17,10 @@ const iconFriend = require('./image/icon-friend.png')
 const iconNet = require('./image/icon-net.png')
 const iconLeft = require('./image/iconLeft.png')
 const iconRight = require('./image/iconRight.png')
+const iconRBT4 = require('./image/icon-rightBT4.png')
+const iconSBT4 = require('./image/icon-searchBT4.png')
+const iconStan = require('./image/icon-stan.png')
+const iconChef = require('./image/icon-chef.png')
 export {
     avatars,
     img2,
@@ -36,5 +40,9 @@ export {
     iconNet,
     iconFriend,
     iconLeft,
-    iconRight
+    iconRight,
+    iconRBT4,
+    iconSBT4,
+    iconStan,
+    iconChef,
 }

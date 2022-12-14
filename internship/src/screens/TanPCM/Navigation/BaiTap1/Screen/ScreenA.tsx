@@ -1,13 +1,16 @@
 import React from 'react';
-import { TouchableOpacity, Text, SafeAreaView, View, StyleSheet } from 'react-native'
+import { TouchableOpacity, Text, SafeAreaView, View, StyleSheet,Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+import {screenName} from '../../../../../navigators/screens-name'
 
-const ScreenA = ({ navigation }) => {
+const ScreenA = () => {
+    const navi = useNavigation<any>();
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Screen A</Text>
             <View style={styles.viewButton}>
                 <TouchableOpacity
-                    onPress={() => { navigation.navigate("ScreenB") }}>
+                    onPress={() => { navi.navigate(screenName.ScreenB_PCMT) }}>
                     <Text style={styles.button}>Next</Text>
                 </TouchableOpacity>
             </View>
