@@ -13,8 +13,8 @@
     "dependencies": {
         "@dudigital/react-native-zoomable-view": "^1.1.4",
         "@react-native-community/slider": "^4.3.3",
-        "@react-navigation/native": "^6.0.14",
-        "@react-navigation/native-stack": "^6.9.2",
+        "@react-navigation/native": "^6.1.1",
+        "@react-navigation/native-stack": "^6.9.6",
         "glamor": "^2.20.40",
         "glamorous-native": "^2.0.0",
         "react": "18.1.0",
