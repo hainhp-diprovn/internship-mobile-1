@@ -85,12 +85,12 @@ const BaiTap9 = () => {
                         (count == 0) ? setCount(HuskyData.length - 1) : setCount(count - 1)
                     }}
                 >
-                    <Image source={iconLeft}/>
+                    <Image source={iconLeft} />
                 </TouchableOpacity>
 
                 <View >
                     <Image
-                        style={{ height: 200, width: 300 }}
+                        style={styles.img}
                         source={{
                             uri: HuskyData[count].img
                         }} />
@@ -100,13 +100,13 @@ const BaiTap9 = () => {
                         (count == HuskyData.length - 1) ? setCount(0) : setCount(count + 1)
                     }}
                 >
-                    <Image source={iconRight}/>
+                    <Image source={iconRight} />
                 </TouchableOpacity>
 
             </View>
-                <View style={styles.viewContent}>
-                    <Text style={{fontSize:16}}>{HuskyData[count].desc}</Text>
-                </View>
+            <View style={styles.viewContent}>
+                <Text style={styles.desc}>{HuskyData[count].desc}</Text>
+            </View>
             <View style={styles.viewButton}>
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.text}>Like</Text>
@@ -135,6 +135,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+    },
+    img: {
+        height: 200,
+        width: 300
     },
     textHeader: {
         fontSize: 20,
@@ -168,5 +172,8 @@ const styles = StyleSheet.create({
     text: {
         color: "white",
         fontSize: 20
+    },
+    desc: {
+        fontSize: 16
     }
 });
