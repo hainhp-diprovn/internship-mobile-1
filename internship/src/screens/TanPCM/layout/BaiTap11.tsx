@@ -6,26 +6,26 @@ const BaiTap11Layout = () => {
         <SafeAreaView style={styles.container}>
             <View style={styles.view}>
                 <View style={styles.viewRow1}>
-                    <View style={{backgroundColor:"green", flex: 1, marginHorizontal:5}}/>
-                    <View style={{backgroundColor: "blue",flex: 1, marginHorizontal:5}}/>
+                    <View style={styles.boxGreen} />
+                    <View style={[styles.boxBlue, { marginHorizontal: 5 }]} />
 
                 </View>
                 <View style={styles.viewRow2}>
-                    <View style={{backgroundColor:"red", flex: 1, marginHorizontal:5}}/>
-                    <View style={{backgroundColor:"red", flex: 1, marginHorizontal:5}}/>
-                    <View style={{backgroundColor:"red", flex: 1, marginHorizontal:5}}/>
+                    <View style={styles.boxRed} />
+                    <View style={styles.boxRed} />
+                    <View style={styles.boxRed} />
 
                 </View>
                 <View style={styles.viewRow3}>
-                    <View style={{backgroundColor:"orange", flex:4, marginHorizontal:5}}/>
-                    <View style={{flex: 5, marginHorizontal:5}}>
-                        <View style={{backgroundColor: "blue", flex: 1, marginBottom:5}}/>
-                        <View style={{backgroundColor: "blue", flex: 1, marginVertical:5}}/>
-                        <View style={{backgroundColor: "blue", flex: 1, marginVertical:5}}/>
-                        <View style={{backgroundColor: "blue", flex: 1, marginVertical:5}}/>
-                        <View style={{backgroundColor: "blue", flex: 1, marginVertical:5}}/>
-                        <View style={{backgroundColor: "blue", flex: 1, marginVertical:5}}/>
-                        <View style={{backgroundColor: "blue", flex: 1, marginTop:5}}/>
+                    <View style={styles.boxOrange} />
+                    <View style={styles.listBlue}>
+                        <View style={[styles.boxBlue, { marginBottom: 5 }]} />
+                        <View style={styles.boxBlueMrVertical} />
+                        <View style={styles.boxBlueMrVertical} />
+                        <View style={styles.boxBlueMrVertical} />
+                        <View style={styles.boxBlueMrVertical} />
+                        <View style={styles.boxBlueMrVertical} />
+                        <View style={[styles.boxBlue, { marginTop: 5 }]} />
                     </View>
                 </View>
             </View>
@@ -40,26 +40,52 @@ const styles = StyleSheet.create({
     },
     view: {
         flex: 1,
-        margin:20,
+        margin: 20,
     },
     viewRow1: {
-        flex:2,
+        flex: 2,
         flexDirection: "row",
         justifyContent: "space-around",
-        paddingVertical:10
+        paddingVertical: 10
     },
-    viewRow2:{
-        flex:1,
+    viewRow2: {
+        flex: 1,
         flexDirection: "row",
         justifyContent: "space-around",
 
     },
-    viewRow3:{
+    viewRow3: {
         flex: 7,
         flexDirection: "row",
         justifyContent: "space-around",
-        paddingVertical:10
-
-        
+        paddingVertical: 10
+    },
+    boxRed: {
+        backgroundColor: "red",
+        flex: 1,
+        marginHorizontal: 5
+    },
+    listBlue: {
+        flex: 5, 
+        marginHorizontal: 5
+    },
+    boxBlue: {
+        backgroundColor: "blue",
+        flex: 1,
+    },
+    boxBlueMrVertical: {
+        backgroundColor: "blue",
+        flex: 1,
+        marginVertical: 5
+    },
+    boxOrange: {
+        backgroundColor: "orange",
+        flex: 4,
+        marginHorizontal: 5
+    },
+    boxGreen: {
+        backgroundColor: "green",
+        flex: 1,
+        marginHorizontal: 5
     }
 })
