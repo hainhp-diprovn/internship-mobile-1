@@ -15,18 +15,18 @@ const Login = () => {
         <SafeAreaView style={styles.container}>
             <View style={styles.headerView}>
             <TouchableOpacity 
-                style={{flex: 1, alignSelf:"center"}}
+                style={styles.button}
                 onPress={() => {
                     navi.goBack()
                 }}
                 >
                     <Text style={styles.textLogout}>Cancel</Text>
                 </TouchableOpacity>
-                <View style={{flex: 1, alignItems:"center", justifyContent: "center"}}>
+                <View style={styles.titleHeader}>
                     <Text style={styles.title}>Edit</Text>
                 </View>
                 <TouchableOpacity 
-                style={{flex: 1, alignSelf:"center"}}
+                style={styles.button}
                 onPress={() => {
                     navi.goBack({
                         screen:"Login",
@@ -125,4 +125,14 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         borderWidth: 1,
       },
+      button: {
+        flex: 1, 
+        alignSelf: "center"
+    },
+    titleHeader: {
+        flex: 1, 
+        alignItems:"center", 
+        justifyContent: "center"
+    },
+      
 })

@@ -79,7 +79,6 @@ const MainStack = () => {
       
       <Stack.Screen name={screenName.home} component={HomeScreen} />
       <Stack.Screen name={screenName.profile} component={ProfileScreen} />
-  
 
     </Stack.Navigator>
   )

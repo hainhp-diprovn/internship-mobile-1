@@ -12,11 +12,11 @@ const Login = () => {
         <SafeAreaView style={styles.container}>
             <View style={styles.headerView}>
                 <View style={{flex: 1}}/>
-                <View style={{flex: 1, alignItems:"center", justifyContent: "center"}}>
+                <View style={styles.titleHeader}>
                     <Text style={styles.title}>Login</Text>
                 </View>
                 <TouchableOpacity 
-                style={{flex: 1, alignSelf:"center"}}
+                style={styles.button}
                 onPress={() => {
                     navi.navigate(screenName.ScreenHome_PCMT, {
                         username: getUserName,
@@ -73,6 +73,11 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontWeight: "bold",
     },
+    titleHeader: {
+        flex: 1, 
+        alignItems:"center", 
+        justifyContent: "center"
+    },
     textDone: {
         alignSelf:"flex-end",
         fontSize:18,
@@ -95,4 +100,8 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         borderWidth: 1,
       },
+      button: {
+        flex: 1, 
+        alignSelf:"center"
+      }
 })

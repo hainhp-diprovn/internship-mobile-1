@@ -26,17 +26,17 @@ const Home = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.headerView}>
         <TouchableOpacity
-          style={{flex: 1, alignSelf: 'center'}}
+          style={styles.button}
           onPress={() => {
             navi.popToTop();
           }}>
           <Text style={styles.textLogout}>Logout</Text>
         </TouchableOpacity>
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <View style={styles.titleHeader}>
           <Text style={styles.title}>Home</Text>
         </View>
         <TouchableOpacity
-          style={{flex: 1, alignSelf: 'center'}}
+          style={styles.button}
           onPress={() => {
             navi.navigate(screenName.ScreenEdit_PCMT, {
               infoName: itemInfo.username ,
@@ -47,10 +47,10 @@ const Home = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.username}>
-        <Text style={{fontSize: 24, fontWeight: '600', paddingVertical: 5}}>
+        <Text style={styles.text}>
           Welcome
         </Text>
-        <Text style={{fontSize: 24, fontWeight: '600', paddingVertical: 5}}>
+        <Text style={styles.text}>
           {itemInfo.username}
         </Text>
       </View>
@@ -63,30 +63,44 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   textEdit: {
-    alignSelf: 'flex-end',
+    alignSelf: "flex-end",
     fontSize: 18,
-    fontWeight: '400',
-    color: '#1e90ff',
+    fontWeight: "400",
+    color: "#1e90ff",
   },
   textLogout: {
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
     fontSize: 18,
-    fontWeight: '400',
-    color: '#1e90ff',
+    fontWeight: "400",
+    color: "#1e90ff",
   },
   username: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
+  text: {
+    fontSize: 24, 
+    fontWeight: "600", 
+    paddingVertical: 5
+  },
+  titleHeader: {
+    flex: 1, 
+    alignItems:"center", 
+    justifyContent: "center"
+},
+button:{
+  flex: 1, 
+  alignSelf: "center"
+}
 });
