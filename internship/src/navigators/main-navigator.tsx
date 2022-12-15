@@ -40,6 +40,12 @@ import BaiTap6666_Layout from "../screens/TanPCM/layout/BaiTap6'''"
 import BaiTap66666_Layout from "../screens/TanPCM/layout/BaiTap6''''"
 import BaiTap8_Layout from "../screens/TanPCM/layout/BaiTap8"
 
+import ScreenA from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenA';
+import ScreenB from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenB';
+import ScreenC from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenC';
+import ScreenD from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenD';
+import ScreenE from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenE';
+
 import SliderVertical from '../screens/ThanhDP/screens/View/SliderVertical';
 import SliderHorizontal from '../screens/ThanhDP/screens/View/SliderHorizontal';
 import BT1_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT1"
