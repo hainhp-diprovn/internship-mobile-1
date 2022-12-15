@@ -8,4 +8,7 @@ export enum screenName {
     ScreenC_PCMT = "ScreenC_PCMT",
     ScreenD_PCMT = "ScreenD_PCMT",
     ScreenE_PCMT = "ScreenE_PCMT",
+    ScreenHome_PCMT = "ScreenHome_PCMT",
+    ScreenEdit_PCMT = "ScreenEdit_PCMT",
+    ScreenLogin_PCMT = "ScreenLogin_PCMT",
 }

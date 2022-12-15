@@ -45,6 +45,10 @@ import ScreenB from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenB';
 import ScreenC from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenC';
 import ScreenD from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenD';
 import ScreenE from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenE';
+import ScreenHome_PCMT from '../screens/TanPCM/Navigation/BaiTap2/Home';
+import ScreenEdit_PCMT from '../screens/TanPCM/Navigation/BaiTap2/Edit';
+import ScreenLogin_PCMT from '../screens/TanPCM/Navigation/BaiTap2/Login';
+
 
 import SliderVertical from '../screens/ThanhDP/screens/View/SliderVertical';
 import SliderHorizontal from '../screens/ThanhDP/screens/View/SliderHorizontal';
@@ -75,6 +79,7 @@ const MainStack = () => {
       
       <Stack.Screen name={screenName.home} component={HomeScreen} />
       <Stack.Screen name={screenName.profile} component={ProfileScreen} />
+  
 
     </Stack.Navigator>
   )
