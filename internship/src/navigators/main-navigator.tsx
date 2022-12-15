@@ -39,6 +39,11 @@ import BaiTap666_Layout from "../screens/TanPCM/layout/BaiTap6''"
 import BaiTap6666_Layout from "../screens/TanPCM/layout/BaiTap6'''"
 import BaiTap66666_Layout from "../screens/TanPCM/layout/BaiTap6''''"
 import BaiTap8_Layout from "../screens/TanPCM/layout/BaiTap8"
+import BaiTap9_Layout from "../screens/TanPCM/layout/BaiTap9"
+import BaiTapSo11_Layout from "../screens/TanPCM/layout/BaiTap11"
+import BaiTap12_Layout from "../screens/TanPCM/layout/BaiTap12"
+import BaiTap13_Layout from "../screens/TanPCM/layout/BaiTap13"
+import BaiTap14_Layout from "../screens/TanPCM/layout/BaiTap14"
 
 import ScreenA from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenA';
 import ScreenB from '../screens/TanPCM/Navigation/BaiTap1/Screen/ScreenB';
