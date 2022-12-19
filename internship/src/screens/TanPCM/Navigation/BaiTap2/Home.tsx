@@ -1,5 +1,5 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -14,13 +14,12 @@ const Home = () => {
   const navi = useNavigation<any>()
   const route = useRoute<any>()
   const itemInfo = route.params
-
-//   useEffect(() => {
-//     if (route.params?.post) {
-//       // Post updated, do something with `route.params.post`
-//       // For example, send the post to the server
-//     }
-//   }, [route.params?.post]);
+  
+  const [userName, setUserName] = useState(itemInfo.username)
+  
+  const onSetUser = (userName: string) => {
+    setUserName(userName)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -41,6 +40,7 @@ const Home = () => {
             navi.navigate(screenName.ScreenEdit_PCMT, {
               infoName: itemInfo.username ,
               infoPass: itemInfo.password,
+              onSetUser: (userName : string) => onSetUser(userName)
             });
           }}>
           <Text style={styles.textEdit}>Edit</Text>
@@ -51,7 +51,7 @@ const Home = () => {
           Welcome
         </Text>
         <Text style={styles.text}>
-          {itemInfo.username}
+          {userName}
         </Text>
       </View>
     </SafeAreaView>
