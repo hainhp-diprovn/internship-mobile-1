@@ -10,7 +10,7 @@ const ScreenA = () => {
             <Text style={styles.title}>Screen A</Text>
             <View style={styles.viewButton}>
                 <TouchableOpacity
-                    onPress={() => { navi.navigate(screenName.ScreenB_PCMT) }}>
+                    onPress={() => { navi.navigate(screenName.ScreenB_DPT) }}>
                     <Text style={styles.button}>Next</Text>
                 </TouchableOpacity>
             </View>

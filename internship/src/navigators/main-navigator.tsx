@@ -60,7 +60,16 @@ import BT5_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT5"
 import BT6_LayoutDPT from "../screens/ThanhDP/screens/Layout/BT6"
 
 import BT8_LayoutDPT from '../screens/ThanhDP/screens/Layout/BT8';
-
+import Login from '../screens/ThanhDP/screens/Navigate/BT2/Login'
+import Home from '../screens/ThanhDP/screens/Navigate/BT2/Home'
+import Edit from '../screens/ThanhDP/screens/Navigate/BT2/Edit'
+import ScreenProfile from '../screens/ThanhDP/screens/Navigate/BT3/ScreenProfile'
+import ScreenDetailProfile from '../screens/ThanhDP/screens/Navigate/BT3/ScreenProfileDetail'
+import ScreenA_DPT from '../screens/ThanhDP/screens/Navigate/BT1/ScreenA'
+import ScreenB_DPT from '../screens/ThanhDP/screens/Navigate/BT1/ScreenB'
+import ScreenC_DPT from '../screens/ThanhDP/screens/Navigate/BT1/ScreenC'
+import ScreenD_DPT from '../screens/ThanhDP/screens/Navigate/BT1/ScreenD'
+import ScreenE_DPT from '../screens/ThanhDP/screens/Navigate/BT1/ScreenE'
 
 const Stack = createNativeStackNavigator()
 
@@ -72,10 +81,15 @@ const MainStack = () => {
       }}
       initialRouteName={screenName.home}
     >
-      
-      <Stack.Screen name={screenName.home} component={HomeScreen} />
-      <Stack.Screen name={screenName.profile} component={ProfileScreen} />
 
+      {/* <Stack.Screen name={screenName.home} component={HomeScreen} />
+      <Stack.Screen name={screenName.profile} component={ProfileScreen} /> */}
+
+      <Stack.Screen name={screenName.ScreenA_DPT} component={ScreenA_DPT} />
+      <Stack.Screen name={screenName.ScreenB_DPT} component={ScreenB_DPT} />
+      <Stack.Screen name={screenName.ScreenC_DPT} component={ScreenC_DPT} />
+      <Stack.Screen name={screenName.ScreenD_DPT} component={ScreenD_DPT} />
+      <Stack.Screen name={screenName.ScreenE_DPT} component={ScreenE_DPT} />
     </Stack.Navigator>
   )
 }
