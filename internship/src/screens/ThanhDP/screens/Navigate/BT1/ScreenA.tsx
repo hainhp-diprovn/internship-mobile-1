@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, SafeAreaView, View, StyleSheet, Image } from 'react-native'
+import { TouchableOpacity, Text, SafeAreaView, View, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { screenName } from '../../../../../navigators/screens-name'
 
