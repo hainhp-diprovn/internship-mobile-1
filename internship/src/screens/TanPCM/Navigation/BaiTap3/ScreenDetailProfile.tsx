@@ -7,22 +7,17 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  DeviceEventEmitter,
 } from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {iconLeft} from '../../url';
+import { goBack } from '../../../../navigators/root-navigator';
 
 const DetailScreen = () => {
   const navi = useNavigation<any>();
   const route = useRoute<any>();
-  const [item, setItem] = useState(route.params.item);
-  let data = route.params.item;
+  const receive = route.params
+  const [name, setName] = useState<string>(receive?.name);
 
-  const updateValue = () => {
-    setItem({...item, name: ''});
-    navi.goBack();
-    DeviceEventEmitter.emit('changeName', {...data, name: item});
-  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -39,21 +34,27 @@ const DetailScreen = () => {
         </View>
         <TouchableOpacity
           style={styles.viewButtonDone}
-          onPress={() => updateValue()}>
+          onPress = {() => {
+            goBack()
+            receive.setName(name);
+          }}
+          >
           <Text style={styles.textDone}>Done</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.viewImg}>
-        <Image style={styles.image} source={route.params.item.image} />
+        <Image style={styles.image} source={receive.image} />
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.input}
+          defaultValue={receive.name}
           placeholderTextColor={'#696969'}
-          placeholder={data.name}
-          onChangeText={setItem}
-          value={item}
+          placeholder={"Nhap Ten"}
+          onChangeText={(text) => {
+            setName(text)
+          }}
         />
       </View>
     </SafeAreaView>

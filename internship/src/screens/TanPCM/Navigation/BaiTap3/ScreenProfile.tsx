@@ -1,17 +1,36 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Text, SafeAreaView, StyleSheet, Image, FlatList, DeviceEventEmitter, View } from 'react-native'
+import { TouchableOpacity, Text, SafeAreaView, StyleSheet, Image, FlatList, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { screenName } from '../../../../navigators/screens-name'
 import { avatars } from '../../url';
 
-const ProfileScreen = () => {
+const UserItem = (props) => {
     const navi = useNavigation<any>();
 
-    DeviceEventEmitter.addListener("changeName", (eventData) => {
-        onSelect(eventData);
-    })
+    const [name, setName] = React.useState<string>(props?.name)
 
-    const [data, setData] = useState([
+    const handleSetName = (name) => {
+        setName(name)
+    }
+    return (
+        <TouchableOpacity style={styles.listItem}
+            onPress={() => navi.navigate(screenName.ScreenDetailProfile, 
+                {
+                setName: (name: string) => handleSetName(name),
+                id: props.id,
+                image: props.image,
+                name: name
+
+            })}>
+            <Image source={props.image} style={styles.image} />
+            <Text style={styles.text}>{name}</Text>
+        </TouchableOpacity>
+    )
+}
+
+const ProfileScreen = () => {
+
+    const data = [
         { id: 1, name: "Name 1", image: avatars },
         { id: 2, name: "Name 2", image: avatars },
         { id: 3, name: "Name 3", image: avatars },
@@ -33,36 +52,19 @@ const ProfileScreen = () => {
         { id: 19, name: "Name 19", image: avatars },
         { id: 20, name: "Name 20", image: avatars },
         { id: 21, name: "Name 21", image: avatars },
-    ])
-
-
-    const onSelect = item => {
-        const newItem = data.map(obj =>
-            obj.id === item.id ? { ...obj, name: item.name } : obj
-          );
-          setData(newItem)
-          };
-
-    const renderItems = (item) => {
-        return (
-            <TouchableOpacity style={styles.listItem}
-                onPress={() => navi.navigate(screenName.ScreenDetailProfile, item)}>
-                <Image source={item?.item.image} style={styles.image} />
-                <Text style={styles.text}>{item?.item.name}</Text>
-            </TouchableOpacity>
-        )
-    }
+    ]
 
     return (
         <SafeAreaView style={styles.container}>
-                <View style={styles.viewItem}>
-                    <Text style={styles.title}>Home</Text>
-                    <FlatList
-                        data={data}
-                        renderItem={(data) => renderItems(data)}
-                        numColumns={3}
-                    />
-                </View>
+            <View style={styles.viewItem}>
+                <Text style={styles.title}>Home</Text>
+                <FlatList
+                    data={data}
+                    showsVerticalScrollIndicator={false}
+                    renderItem={({ item }) => <UserItem name={item.name} image={item.image} id={item.id} />}
+                    numColumns={3}
+                />
+            </View>
         </SafeAreaView>
     )
 }
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     viewItem: {
-        flex:1, 
+        flex: 1,
         textAlign: "center",
         justifyContent: "center",
     },
