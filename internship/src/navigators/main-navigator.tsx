@@ -5,6 +5,7 @@ import { screenName } from "./screens-name"
 import HomeScreen from "../screens/Home/HomeScreen"
 import { navigationRef } from "./root-navigator"
 import ProfileScreen from "../screens/Profile/ProfileScreen"
+import BT13 from '../screens/ThanhDP/screens/Layout/BT13'
 
 const Stack = createNativeStackNavigator()
 
@@ -16,8 +17,9 @@ const MainStack = () => {
       }}
       initialRouteName={screenName.home}
     >
-      <Stack.Screen name={screenName.home} component={HomeScreen} />
-      <Stack.Screen name={screenName.profile} component={ProfileScreen} />
+      {/* <Stack.Screen name={screenName.home} component={HomeScreen} />
+      <Stack.Screen name={screenName.profile} component={ProfileScreen} /> */}
+      <Stack.Screen name={screenName.ThanhDP} component={BT13} />
     </Stack.Navigator>
   )
 }
