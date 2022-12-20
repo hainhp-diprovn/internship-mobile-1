@@ -10,7 +10,7 @@ const boxHeight = 100
 
 const BaiTap10 = () => {
 
-    const [selected, setSelected] = useState<number>(NaN)
+    const [selected, setSelected] = useState<number>(-1)
     const prevSelected = useRef<number>(selected)
 
     const zoomAnimated = useRef(new Animated.Value(boxHeight)).current;
