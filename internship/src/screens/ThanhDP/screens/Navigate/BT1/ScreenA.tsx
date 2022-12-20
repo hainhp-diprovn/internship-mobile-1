@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, SafeAreaView, View, StyleSheet, Image } from 'react-native'
+import { TouchableOpacity, Text, SafeAreaView, View, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { screenName } from '../../../../../navigators/screens-name'
 
@@ -10,7 +10,7 @@ const ScreenA = () => {
             <Text style={styles.title}>Screen A</Text>
             <View style={styles.viewButton}>
                 <TouchableOpacity
-                    onPress={() => { navi.navigate(screenName.ScreenB_PCMT) }}>
+                    onPress={() => { navi.navigate(screenName.ScreenB_DPT) }}>
                     <Text style={styles.button}>Next</Text>
                 </TouchableOpacity>
             </View>
