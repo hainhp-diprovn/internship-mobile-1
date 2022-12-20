@@ -21,6 +21,8 @@ const iconRBT4 = require('./image/icon-rightBT4.png')
 const iconSBT4 = require('./image/icon-searchBT4.png')
 const iconStan = require('./image/icon-stan.png')
 const iconChef = require('./image/icon-chef.png')
+const iconBook = require('./image/icon-Book.png')
+const iconLook = require('./image/icon-Lock.png')
 export {
     avatars,
     img2,
@@ -45,4 +47,6 @@ export {
     iconSBT4,
     iconStan,
     iconChef,
+    iconLook,
+    iconBook
 }

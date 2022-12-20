@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, SafeAreaView, StyleSheet, Text, Image} from 'react-native';
+import {
+  View,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  Image,
+  ScrollView,
+} from 'react-native';
 import {
   avatars,
   iconMenu,
@@ -9,9 +16,49 @@ import {
   iconAvatar,
   iconNet,
   iconFriend,
+  iconBook,
+  iconLook,
 } from '../url';
 
 const BaiTap13 = () => {
+  const data = [
+    {
+      image: iconAvatar,
+      title: "Change Avatar",
+      subTitle: "Set",
+    },
+    {
+      image: iconChange,
+      title: "Change Username",
+      subTitle: "Alexis Gorzov",
+    },
+    {
+      image: iconFriend,
+      title: "Alarm Circles",
+      subTitle: "S4 Friends",
+    },
+    {
+      image: iconNet,
+      title: "Set Unlock Pattern",
+      subTitle: "Default Pattern Set",
+    },
+    {
+      image: iconBook,
+      title: "Set Content",
+      subTitle: "Lorem ipsum dolor sit amet..."
+    },
+    {
+      image: iconLook,
+      title: "Set Time",
+      subTitle: "25 Dec 2021 | 09:00 am"
+    },
+    {
+      image: iconFriend,
+      title: "Set Friend",
+      subTitle: "2 Friend"
+    },
+  ];
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -29,72 +76,37 @@ const BaiTap13 = () => {
             Tap hear to change your profile status
           </Text>
           <Text style={styles.textInfo}>32 Scheduled</Text>
-          <Text style={[styles.textInfo, {marginVertical: 0}]}>
+          <Text style={[styles.textInfo, { marginVertical: 0 }]}>
             105 Friends
           </Text>
         </View>
       </View>
 
       <View style={styles.flex8}>
-        <View style={styles.row}>
-          <View style={styles.flex1}>
-            <View style={styles.image}>
-              <Image source={iconAvatar} />
+        <ScrollView>
+        {data.map((item, index) => {
+          return (
+            <View style={[styles.row, {
+              backgroundColor: index % 2 === 0 ? "#fffaf0" :
+                "#faebd7"
+            }]}>
+              <View style={styles.flex1}>
+                <View style={styles.image}>
+                  <Image source={item.image} />
+                </View>
+              </View>
+              <View style={styles.textList}>
+                <Text style={styles.textHeader}>{item.title}</Text>
+                <Text>{item.subTitle}</Text>
+              </View>
+              <View style={styles.flex1}>
+                <Image source={iconPlusList} />
+              </View>
             </View>
-          </View>
-          <View style={styles.textList}>
-            <Text style={styles.textHeader}>Change Avatar</Text>
-            <Text>Set</Text>
-          </View>
-          <View style={styles.flex1}>
-            <Image source={iconPlusList} />
-          </View>
-        </View>
+          );
+        })}
+        </ScrollView>
 
-        <View style={[styles.row, {backgroundColor: '#faebd7'}]}>
-          <View style={styles.flex1}>
-            <View style={styles.image}>
-              <Image source={iconChange} />
-            </View>
-          </View>
-          <View style={styles.textList}>
-            <Text style={styles.textHeader}>Change Username</Text>
-            <Text>Alexis Gorzov</Text>
-          </View>
-          <View style={styles.flex1}>
-            <Image source={iconPlusList} />
-          </View>
-        </View>
-
-        <View style={styles.row}>
-          <View style={styles.flex1}>
-            <View style={styles.image}>
-              <Image source={iconFriend} />
-            </View>
-          </View>
-          <View style={styles.textList}>
-            <Text style={styles.textHeader}>Alarm Circles</Text>
-            <Text>S4 Friends</Text>
-          </View>
-          <View style={styles.flex1}>
-            <Image source={iconPlusList} />
-          </View>
-        </View>
-
-        <View style={[styles.row, {backgroundColor: '#faebd7'}]}>
-          <View style={styles.flex1}>
-            <View style={styles.image}>
-              <Image source={iconNet} />
-            </View>
-          </View>
-          <View style={styles.textList}>
-            <Text style={styles.textHeader}>Set Unlock Pattern</Text>
-            <Text>Default Pattern Set</Text>
-          </View>
-          <View style={styles.flex1}>
-            <Image source={iconPlusList} />
-          </View>
-        </View>
       </View>
     </SafeAreaView>
   );
@@ -115,60 +127,59 @@ const styles = StyleSheet.create({
     flex: 1,
     borderBottomWidth: 1,
     paddingHorizontal: 20,
-    backgroundColor: 'red',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    backgroundColor: "red",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   title: {
     fontSize: 18,
-    color: 'white',
-    fontWeight: '600',
+    color: "white",
+    fontWeight: "600",
   },
   viewInfo: {
     flex: 5,
     paddingHorizontal: 20,
-    backgroundColor: 'red',
-    flexDirection: 'row',
+    backgroundColor: "red",
+    flexDirection: "row",
   },
   viewImage: {
     flex: 1,
     paddingRight: 20,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   imgAvatar: {
     height: 170,
     aspectRatio: 1 / 1,
     borderRadius: 100,
     borderWidth: 10,
-    borderColor: 'yellow',
+    borderColor: "yellow",
   },
   viewText: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   textInfo: {
     fontSize: 14,
     marginVertical: 10,
-    fontWeight: '600',
-    color: 'white',
+    fontWeight: "600",
+    color: "white",
   },
   textInfoName: {
     marginVertical: 10,
     fontSize: 20,
-    fontWeight: '600',
-    color: 'yellow',
+    fontWeight: "600",
+    color: "yellow",
   },
   row: {
+    height: 100,
     paddingHorizontal: 20,
-    flex: 1,
-    backgroundColor: '#fffaf0',
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   textHeader: {
     paddingVertical: 10,
-    color: 'red',
+    color: "red",
   },
   textList: {
     flex: 3,
@@ -179,6 +190,6 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 8,
     borderRadius: 50,
-    alignSelf: 'center',
+    alignSelf: "center",
   },
 });
