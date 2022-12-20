@@ -83,10 +83,11 @@ const BaiTap13 = () => {
       </View>
 
       <View style={styles.flex8}>
-        <ScrollView>
+        <ScrollView
+        showsVerticalScrollIndicator = {false}>
         {data.map((item, index) => {
           return (
-            <View style={[styles.row, {
+            <View key={index} style={[styles.row, {
               backgroundColor: index % 2 === 0 ? "#fffaf0" :
                 "#faebd7"
             }]}>
