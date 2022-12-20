@@ -1,15 +1,19 @@
 on:
-  push:
+  pull_request:
     branches:
       - develop
+      - release1
 jobs:
   install-and-test:
     runs-on: ubuntu-latest
     steps: 
+      - name: Checkout
       - uses: actions/checkout@v2
-      - name: Install dependencies
+      - uses: actions/setup-node@master
+      - uses: c-hive/gha-yarn-cache@v1
+      - name: Install node modules
         run: |
           yarn install
       - name: Run tests
         run: |
-          yarn test
+          yarn test-ci
