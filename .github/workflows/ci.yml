@@ -1,7 +1,6 @@
 on:
   pull_request:
     branches:
-      - develop
       - release1
 jobs:
   install-and-test:
