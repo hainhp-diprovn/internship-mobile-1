@@ -6,7 +6,6 @@ import HomeScreen from "../screens/Home/HomeScreen"
 import { navigationRef } from "./root-navigator"
 import ProfileScreen from "../screens/Profile/ProfileScreen"
 
-
 const Stack = createNativeStackNavigator()
 
 const MainStack = () => {
