@@ -19,4 +19,9 @@ export enum screenName {
     ScreenC_DPT = "ScreenC_DPT",
     ScreenD_DPT = "ScreenD_DPT",
     ScreenE_DPT = "ScreenE_DPT",
+    ScreenPage1_PCMT = "ScreenPage1_PCMT",
+    ScreenPage2_PCMT = "ScreenPage2_PCMT",
+    ScreenPage3_PCMT = "ScreenPage3_PCMT",
+    ScreenPage4_PCMT = "ScreenPage4_PCMT",
+    ScreenPage5_PCMT = "ScreenPage5_PCMT",
 }
