@@ -4,12 +4,12 @@ on:
       - develop
 jobs:
   install-and-test:
+    if: github.event.pull_request.merged == 'true'
     runs-on: ubuntu-latest
     steps: 
-      - name: Checkout
-        uses: actions/checkout@v2
       - uses: actions/setup-node@master
-      - uses: c-hive/gha-yarn-cache@v1
+      - name: Checkout
+        uses: actions/checkout@internship
       - name: Install node modules
         run: |
           yarn install
