@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - name: Install npm dependencies
+      - name: Install dependencies
         run: |
-          npm install
+          yarn install
       - name: Run tests
         run: |
           npm test
