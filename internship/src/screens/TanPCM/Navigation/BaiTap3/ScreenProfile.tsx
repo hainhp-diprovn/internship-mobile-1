@@ -14,7 +14,7 @@ const UserItem = (props) => {
     }
     return (
         <TouchableOpacity style={styles.listItem}
-            onPress={() => navi.navigate(screenName.ScreenDetailProfile, 
+            onPress={() => navi.navigate(screenName.ScreenDetailProfile_PCMT, 
                 {
                 setName: (name: string) => handleSetName(name),
                 id: props.id,
