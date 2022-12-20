@@ -1,14 +1,13 @@
 on:
-  push:
+  pull_request:
     branches:
       - develop
 jobs:
   install-and-test:
-    if: github.event.pull_request.merged == 'true'
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - uses: actions/setup-node@master
       - name: Install node modules
         run: |
