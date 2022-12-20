@@ -5,18 +5,6 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 const Header4 = () => {
 
-    const ViewLeft = () => {
-        return (
-            <TouchableOpacity>
-                <Icon
-                    name="search1"
-                    size={35}
-                    color="white"
-                />
-            </TouchableOpacity>
-        )
-    }
-
     const ViewMiddle = () => {
         return (
             <Text style={styles.txtTitle}>Bar Button Test</Text>

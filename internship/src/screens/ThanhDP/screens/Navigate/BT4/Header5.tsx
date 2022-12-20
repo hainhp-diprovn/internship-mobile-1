@@ -22,10 +22,10 @@ const Header5 = () => {
         return (
             <View style={{ width: "100%", flexDirection: "row" }}>
                 <TouchableOpacity>
-                    <Text style={[styles.txtTitle, { marginLeft: 10 }]}>Mid 1</Text>
+                    <Text style={styles.txtTitleMarginLeft10}>Mid 1</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Text style={[styles.txtTitle, { marginLeft: 10 }]}>Mid 2</Text>
+                    <Text style={styles.txtTitleMarginLeft10}>Mid 2</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -60,6 +60,12 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: "bold",
         color: "white"
+    },
+    txtTitleMarginLeft10: {
+        fontSize: 22,
+        fontWeight: "bold",
+        color: "white",
+        marginLeft: 10
     },
     btnBack: {
         flexDirection: "row",
