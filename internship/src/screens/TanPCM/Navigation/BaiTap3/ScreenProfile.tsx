@@ -54,18 +54,6 @@ const UserItem = (props) => {
 
 const ProfileScreenComp = () => {
 
-
-    //state data : default data 
-    // data 
-    //id 
-    //return data  
-    //setdata 
-
-    // useEffect data 
-    // useLayoutEffect 
-    // data 
-    // useMemo
-
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.viewItem}>
