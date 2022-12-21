@@ -16,13 +16,10 @@ jobs:
   build-android:
     needs: install-and-test
     runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v3
-        with:
-          path: internship
+    steps:
       - name: Build Android Release
         run: |
-          cd internship && cd android && ./gradlew assembleRelease
+          yarn run cd internship && cd android && ./gradlew assembleRelease
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
