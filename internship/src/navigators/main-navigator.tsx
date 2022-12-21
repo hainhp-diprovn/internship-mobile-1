@@ -5,6 +5,8 @@ import { screenName } from "./screens-name"
 import HomeScreen from "../screens/Home/HomeScreen"
 import { navigationRef } from "./root-navigator"
 import ProfileScreen from "../screens/Profile/ProfileScreen"
+import ProfileScreenComp from "../screens/TanPCM/Navigation/BaiTap3/ScreenProfile"
+import DetailScreen from "../screens/TanPCM/Navigation/BaiTap3/ScreenDetailProfile"
 
 const Stack = createNativeStackNavigator()
 

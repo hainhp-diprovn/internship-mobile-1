@@ -11,6 +11,8 @@ export enum screenName {
     Login_DPT = "Login_DPT",
     Home_DPT = "Home_DPT",
     Edit_DPT = "Edit_DPT",
+    ScreenProfile_PCMT = "ScreenProfile_PCMT",
+    ScreenDetailProfile_PCMT = "ScreenDetailProfile_PCMT",
     ScreenDetailProfile_DPT = "ScreenDetailProfile_DPT",
     ScreenProfile_DPT = "ScreenProfile_DPT",
     ScreenHeader_DPT = "ScreenHeader_DPT",

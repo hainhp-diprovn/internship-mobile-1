@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useMemo, useState } from 'react';
 import { TouchableOpacity, Text, SafeAreaView, StyleSheet, Image, FlatList, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { screenName } from '../../../../navigators/screens-name'
 import { avatars } from '../../url';
+
+export const data = [
+    { id: 1, name: "Name 1", image: avatars },
+    { id: 2, name: "Name 2", image: avatars },
+    { id: 3, name: "Name 3", image: avatars },
+    { id: 4, name: "Name 4", image: avatars },
+    { id: 5, name: "Name 5", image: avatars },
+    { id: 6, name: "Name 6", image: avatars },
+    { id: 7, name: "Name 7", image: avatars },
+    { id: 8, name: "Name 8", image: avatars },
+    { id: 9, name: "Name 9", image: avatars },
+    { id: 10, name: "Name 10", image: avatars },
+    { id: 11, name: "Name 11", image: avatars },
+    { id: 12, name: "Name 12", image: avatars },
+    { id: 13, name: "Name 13", image: avatars },
+    { id: 14, name: "Name 14", image: avatars },
+    { id: 15, name: "Name 15", image: avatars },
+    { id: 16, name: "Name 16", image: avatars },
+    { id: 17, name: "Name 17", image: avatars },
+    { id: 18, name: "Name 18", image: avatars },
+    { id: 19, name: "Name 19", image: avatars },
+    { id: 20, name: "Name 20", image: avatars },
+    { id: 21, name: "Name 21", image: avatars },
+]
 
 const UserItem = (props) => {
     const navi = useNavigation<any>();
@@ -28,31 +52,19 @@ const UserItem = (props) => {
     )
 }
 
-const ProfileScreen = () => {
+const ProfileScreenComp = () => {
 
-    const data = [
-        { id: 1, name: "Name 1", image: avatars },
-        { id: 2, name: "Name 2", image: avatars },
-        { id: 3, name: "Name 3", image: avatars },
-        { id: 4, name: "Name 4", image: avatars },
-        { id: 5, name: "Name 5", image: avatars },
-        { id: 6, name: "Name 6", image: avatars },
-        { id: 7, name: "Name 7", image: avatars },
-        { id: 8, name: "Name 8", image: avatars },
-        { id: 9, name: "Name 9", image: avatars },
-        { id: 10, name: "Name 10", image: avatars },
-        { id: 11, name: "Name 11", image: avatars },
-        { id: 12, name: "Name 12", image: avatars },
-        { id: 13, name: "Name 13", image: avatars },
-        { id: 14, name: "Name 14", image: avatars },
-        { id: 15, name: "Name 15", image: avatars },
-        { id: 16, name: "Name 16", image: avatars },
-        { id: 17, name: "Name 17", image: avatars },
-        { id: 18, name: "Name 18", image: avatars },
-        { id: 19, name: "Name 19", image: avatars },
-        { id: 20, name: "Name 20", image: avatars },
-        { id: 21, name: "Name 21", image: avatars },
-    ]
+
+    //state data : default data 
+    // data 
+    //id 
+    //return data  
+    //setdata 
+
+    // useEffect data 
+    // useLayoutEffect 
+    // data 
+    // useMemo
 
     return (
         <SafeAreaView style={styles.container}>
@@ -68,7 +80,7 @@ const ProfileScreen = () => {
         </SafeAreaView>
     )
 }
-export default ProfileScreen
+export default ProfileScreenComp;  
 
 const styles = StyleSheet.create({
     container: {
