@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Build Android Release
         run: |
-          cd android && ./gradlew assembleRelease
+          cd internship && cd android && ./gradlew assembleRelease
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
