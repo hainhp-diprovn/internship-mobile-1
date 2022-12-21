@@ -8,11 +8,6 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: internship
       - name: Install node modules
         run: |
           yarn install
-      - name: Run tests
-        run: |
-          yarn test-ci
