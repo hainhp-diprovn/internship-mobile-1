@@ -19,9 +19,9 @@ jobs:
     steps:
       - name: Build Android Release
         run: |
-          yarn run cd internship && cd android && ./gradlew assembleRelease
+          cd android && ./gradlew assembleRelease
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
