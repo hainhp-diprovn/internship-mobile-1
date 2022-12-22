@@ -23,6 +23,9 @@ const iconStan = require('./image/icon-stan.png')
 const iconChef = require('./image/icon-chef.png')
 const iconBook = require('./image/icon-Book.png')
 const iconLook = require('./image/icon-Lock.png')
+const coVN = require('./image/coVn.jpeg')
+const diproDN = require('./image/dipro.jpeg')
+const daNang = require('./image/dn.jpeg')
 export {
     avatars,
     img2,
@@ -48,5 +51,8 @@ export {
     iconStan,
     iconChef,
     iconLook,
-    iconBook
+    iconBook,
+    coVN,
+    diproDN,
+    daNang
 }

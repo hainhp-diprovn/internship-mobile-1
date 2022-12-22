@@ -14,7 +14,7 @@ const MainStack = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={screenName.home}
+      initialRouteName={screenName.phuchiminhtan}
     >
       <Stack.Screen name={screenName.home} component={HomeScreen} />
       <Stack.Screen name={screenName.profile} component={ProfileScreen} />
